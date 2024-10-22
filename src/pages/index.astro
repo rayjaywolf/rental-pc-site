@@ -1,5 +1,7 @@
 ---
+import Image from "astro/components/Image.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import pcImg from "../../public/images/pc.avif";
 const pageTitle = "Home";
 ---
 
@@ -18,12 +20,17 @@ const pageTitle = "Home";
     <div class="fade-l"></div>
     <div class="fade-b"></div>
   </div>
-  <div class="random"></div>
+  <div class="about-section">
+    <div class="about-img">
+      <Image src={pcImg} alt="PC" />
+    </div>
+    <about class="content"></about>
+  </div>
 </BaseLayout>
 
 <style>
   .hero {
-    background-image: url("/hero.jpg");
+    background-image: url("images/hero.jpg");
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -33,7 +40,7 @@ const pageTitle = "Home";
       display: flex;
       flex-direction: column;
       gap: 2rem;
-      font-family: "Oxanium";
+      /* font-family: "Oxanium"; */
       position: relative;
       z-index: 10;
       .hero-text {
@@ -72,7 +79,10 @@ const pageTitle = "Home";
       background-image: linear-gradient(transparent, #0f0914);
     }
   }
-  .random {
-    height: 100vh;
+  .about-section {
+    height: calc(100vh - 8rem);
+    padding: 0 7.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   }
 </style>
