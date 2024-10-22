@@ -1,7 +1,6 @@
 ---
 import Image from "astro/components/Image.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import pcImg from "../../public/images/pc.avif";
 const pageTitle = "Home";
 ---
 
@@ -22,7 +21,12 @@ const pageTitle = "Home";
   </div>
   <div class="about-section">
     <div class="about-img">
-      <Image src={pcImg} alt="PC" />
+      <Image
+        src="https://nzxt.com/assets/cms/34299/1659594250-boost-performance-primary.png?auto=format&fit=fillmax&h=1344&w=1344"
+        width={1344}
+        height={1344}
+        alt="About Us"
+      />
     </div>
     <about class="content"></about>
   </div>
