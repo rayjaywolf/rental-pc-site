@@ -22,6 +22,16 @@ const pageTitle = "Home";
     <div class="fade-l"></div>
     <div class="fade-b"></div>
   </div>
+  <div class="m-hero-info">
+    <h1 class="hero-text">
+      The <span>Best PC Rental</span>
+      <br /> Services in India
+    </h1>
+    <p class="hero-description">
+      Rent the perfect PC for any occasion. <br /> India's premier PC rental service.
+    </p>
+    <button class="apply-btn"> Rent Now </button>
+  </div>
   <div class="about-section">
     <div class="about-img">
       <Image
@@ -115,7 +125,6 @@ const pageTitle = "Home";
       display: flex;
       flex-direction: column;
       gap: 2rem;
-      /* font-family: "Oxanium"; */
       position: relative;
       z-index: 10;
       .hero-text {
@@ -133,6 +142,9 @@ const pageTitle = "Home";
         z-index: 10;
         position: relative;
       }
+    }
+    .m-hero-info {
+      display: none;
     }
     .fade-l {
       position: absolute;
@@ -307,6 +319,93 @@ const pageTitle = "Home";
             color: #0f0914;
             margin-top: 1rem;
           }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      height: 360px;
+      width: 100%;
+      padding: 0;
+      background-size: cover;
+      background-repeat: no-repeat;
+      margin-top: 5rem;
+      .hero-info {
+        display: none;
+      }
+      .fade-l {
+        display: none;
+      }
+    }
+    .m-hero-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      text-align: center;
+      .hero-text {
+        font-size: 1.5rem;
+        span {
+          color: #bdf9a1;
+          font-weight: 600;
+        }
+      }
+      .hero-description {
+        font-size: 1rem;
+        color: #f7f7f7;
+      }
+    }
+    .about-section {
+      padding: 7.5rem 2rem 5rem;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 5rem;
+      .about-img {
+        img {
+          height: 100%;
+        }
+      }
+      .about-content {
+        padding: 0 2rem;
+        padding-top: 2rem;
+        h1 {
+          font-size: 2rem;
+        }
+        p {
+          padding: 0;
+        }
+      }
+    }
+    .collection {
+      padding: 0 2rem 5rem;
+      .collection-headings {
+        h1 {
+          font-size: 1.5rem;
+        }
+      }
+      .collection-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      .collection-btn {
+        margin-top: 1.5rem;
+      }
+    }
+    .contact-section {
+      height: auto;
+      padding: 0 2rem 5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      .contact-desc {
+        h1 {
+          font-size: 2rem;
+        }
+        p {
+          font-size: 1rem;
         }
       }
     }
