@@ -14,7 +14,7 @@ const pageTitle = "Home";
       <p class="hero-description">
         Rent the perfect PC for any occasion. <br /> India's premier PC rental service.
       </p>
-      <button class="apply-btnjin"> Rent Now </button>
+      <button class="apply-btn"> Rent Now </button>
     </div>
     <div class="fade-l"></div>
     <div class="fade-b"></div>
@@ -23,12 +23,21 @@ const pageTitle = "Home";
     <div class="about-img">
       <Image
         src="https://nzxt.com/assets/cms/34299/1659594250-boost-performance-primary.png?auto=format&fit=fillmax&h=1344&w=1344"
-        width={1344}
-        height={1344}
+        width={1152}
+        height={860}
         alt="About Us"
       />
     </div>
-    <about class="content"></about>
+    <div class="about-content">
+      <h1>PC rentals in India</h1>
+      <p>
+        Experience the convenience of renting a PC in India with our flexible
+        and cost-effective solutions. Whether you're an individual or a
+        business, our rental services provide you with the latest technology
+        without the burden of ownership.
+      </p>
+      <button>Know More</button>
+    </div>
   </div>
 </BaseLayout>
 
@@ -84,9 +93,57 @@ const pageTitle = "Home";
     }
   }
   .about-section {
-    height: calc(100vh - 8rem);
+    height: calc(100vh - 4rem);
     padding: 0 7.5rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    align-items: center;
+    .about-img {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: drop-shadow(0 0 2rem rgba(143, 104, 255, 0.4));
+        transition: filter 0.6s;
+        &:hover {
+          filter: drop-shadow(0 0 2rem rgba(143, 104, 255, 0.8));
+          transition: filter 0.6s;
+        }
+      }
+    }
+    .about-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #161026;
+      border-radius: 15px;
+      gap: 2rem;
+      border: 1px solid #2a2241;
+      padding-top: 3rem;
+      h1 {
+        font-size: 2.5rem;
+        font-weight: 600;
+        line-height: 1;
+      }
+      p {
+        padding: 0 5rem;
+        font-size: 1.2rem;
+        font-weight: 400;
+        color: #bdbdbd;
+      }
+      button {
+        width: 100%;
+        box-shadow: none;
+        border: none;
+        border-top: 1px solid #2a2241;
+        height: 5rem;
+        font-family: "Oxanium";
+        font-weight: 300;
+      }
+    }
   }
 </style>
