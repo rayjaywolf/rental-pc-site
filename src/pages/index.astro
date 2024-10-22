@@ -1,16 +1,78 @@
 ---
-
+import BaseLayout from "../layouts/BaseLayout.astro";
+const pageTitle = "Home";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>PC RENTALS</title>
-  </head>
-  <body>
-    <h1>Astro</h1>
-  </body>
-</html>
+<BaseLayout pageTitle={pageTitle}>
+  <div class="hero">
+    <div class="hero-info">
+      <h1 class="hero-text">
+        The <span>Best PC Rental</span>
+        <br /> Services in India
+      </h1>
+      <p class="hero-description">
+        Rent the perfect PC for any occasion. <br /> India's premier PC rental service.
+      </p>
+      <button class="apply-btnjin"> Rent Now </button>
+    </div>
+    <div class="fade-l"></div>
+    <div class="fade-b"></div>
+  </div>
+  <div class="random"></div>
+</BaseLayout>
+
+<style>
+  .hero {
+    background-image: url("/hero.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    position: relative;
+    padding: 20rem 10rem;
+    .hero-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      font-family: "Oxanium";
+      position: relative;
+      z-index: 10;
+      .hero-text {
+        font-size: 3rem;
+        font-weight: 400;
+        span {
+          color: #bdf9a1;
+          font-weight: 600;
+        }
+      }
+      .hero-description {
+        font-size: 1.2rem;
+        font-weight: 400;
+        color: #f7f7f7;
+        z-index: 10;
+        position: relative;
+      }
+    }
+    .fade-l {
+      position: absolute;
+      left: 0;
+      top: 0;
+      min-width: 120px;
+      width: 50%;
+      height: 100%;
+      z-index: 0;
+      background-image: linear-gradient(90deg, #0f0914, transparent);
+    }
+    .fade-b {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 8rem;
+      z-index: 0;
+      background-image: linear-gradient(transparent, #0f0914);
+    }
+  }
+  .random {
+    height: 100vh;
+  }
+</style>
