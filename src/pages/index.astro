@@ -1,6 +1,9 @@
 ---
 import Image from "astro/components/Image.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Card from "../components/Card.astro";
+import { getCollection } from "astro:content";
+const pcs = await getCollection("pcs");
 const pageTitle = "Home";
 ---
 
@@ -37,6 +40,37 @@ const pageTitle = "Home";
         without the burden of ownership.
       </p>
       <button>Know More</button>
+    </div>
+  </div>
+  <div class="collection">
+    <div class="collection-headings">
+      <h2>Performance for every budget</h2>
+      <h1>PC Collections</h1>
+    </div>
+    <div class="collection-container">
+      {
+        pcs.map((pc) => (
+          <Card
+            image={pc.data.image}
+            name={pc.data.name}
+            specs={pc.data.specs}
+          />
+        ))
+      }
+      {
+        pcs
+          .reverse()
+          .map((pc) => (
+            <Card
+              image={pc.data.image}
+              name={pc.data.name}
+              specs={pc.data.specs}
+            />
+          ))
+      }
+    </div>
+    <div class="collection-btn">
+      <button>View All</button>
     </div>
   </div>
 </BaseLayout>
@@ -140,9 +174,42 @@ const pageTitle = "Home";
         box-shadow: none;
         border: none;
         border-top: 1px solid #2a2241;
-        height: 5rem;
+        height: 4rem;
         font-family: "Oxanium";
         font-weight: 300;
+      }
+    }
+  }
+  .collection {
+    padding: 0 7.5rem;
+    padding-bottom: 2rem;
+    .collection-headings {
+      font-family: "Oxanium";
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      h2 {
+        font-size: 1rem;
+        font-weight: 400;
+        color: #bdbdbd;
+      }
+      h1 {
+        font-size: 2rem;
+        font-weight: 600;
+        color: #f7f7f7;
+      }
+    }
+    .collection-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .collection-btn {
+      display: flex;
+      justify-content: center;
+      button {
+        margin-top: 2rem;
       }
     }
   }
