@@ -1,20 +1,20 @@
 ---
-image: "/pcs/12.jpg"
-name: "ASUS ROG Strix G13CHR 2024"
-slug: "asus-rog-strix-g13chr-2024"
+image: "/pcs/10.jpg"
+name: "ASUS ROG Strix G22CH 2024"
+slug: "asus-rog-strix-g22ch-2024"
 specs:
   - Intel®️ Core™️ i7-14700F 14th Gen
   - Gaming Desktop
   - 16GB RAM
   - 1TB SSD
-  - 8GB NVIDIA GeForce RTX 4060
+  - 12GB NVIDIA GeForce RTX 4070
   - Windows 11
   - Extreme Dark Gray
-  - 8Kg
-  - G13CHR-71470F004WS
+  - 8.40Kg
+  - G22CH-71470F004WS
 core:
   - Intel®️ Core™️ i7-14700F 14th Gen
-  - NVIDIA GeForce RTX 4060
+  - NVIDIA GeForce RTX 4070
   - 1TB SSD
   - 16GB RAM
 ---

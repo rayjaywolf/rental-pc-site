@@ -1,0 +1,94 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const pcs = await getCollection("pcs");
+  return pcs.map((pc) => ({
+    params: { pc: pc.data.slug },
+    props: { pc: pc.data },
+  }));
+}
+
+const { pc } = Astro.props;
+---
+
+<BaseLayout pageTitle={pc.name}>
+  <div class="pc">
+    <div class="pc-hero">
+      <h1 class="pc-name">{pc.name}</h1>
+      <img src={pc.image} alt={pc.name} class="pc-image" />
+    </div>
+    <div class="pc-specs">
+      <h2>Specifications</h2>
+      <ul>
+        {pc.specs.map((spec) => <li>{spec}</li>)}
+      </ul>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .pc {
+    padding: 5rem 7.5rem;
+  }
+  .pc-hero {
+    text-align: center;
+    padding: 2rem;
+    background-color: #161026;
+    border-bottom: 1px solid #2a2241;
+  }
+
+  .pc-name {
+    font-size: 2.5rem;
+    color: #bdf9a1;
+    margin-bottom: 1rem;
+  }
+
+  .pc-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 2rem rgba(143, 104, 255, 0.4);
+  }
+
+  .pc-specs {
+    padding: 2rem 2rem;
+    background-color: #0f0914;
+  }
+
+  .pc-specs h2 {
+    font-size: 2rem;
+    color: #f7f7f7;
+    margin-bottom: 1rem;
+  }
+
+  .pc-specs ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .pc-specs li {
+    background: #161026;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    border-radius: 5px;
+    color: #bdbdbd;
+  }
+
+  @media (max-width: 768px) {
+    .pc {
+      padding: 4rem 1rem;
+    }
+    .pc-hero {
+      padding: 1rem;
+    }
+    .pc-specs {
+      padding: 1rem;
+    }
+    .pc-specs li {
+      padding: 1rem 1.5rem;
+    }
+  }
+</style>
