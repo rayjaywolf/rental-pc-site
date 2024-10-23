@@ -39,6 +39,7 @@ const pageTitle = "Home";
         width={1152}
         height={860}
         alt="About Us"
+        loading="lazy"
       />
     </div>
     <div class="about-content">
@@ -64,19 +65,9 @@ const pageTitle = "Home";
             image={pc.data.image}
             name={pc.data.name}
             specs={pc.data.specs}
+            loading="lazy"
           />
         ))
-      }
-      {
-        pcs
-          .reverse()
-          .map((pc) => (
-            <Card
-              image={pc.data.image}
-              name={pc.data.name}
-              specs={pc.data.specs}
-            />
-          ))
       }
     </div>
     <div class="collection-btn">
